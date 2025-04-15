@@ -12,6 +12,6 @@
   "dependencies": {
     "color": "^4.2.3",
     "discord.js": "^14.14.1",
-    "node": "^21.2.0"
+    "node": "^21.7.3"
   }
 }

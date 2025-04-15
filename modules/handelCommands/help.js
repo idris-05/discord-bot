@@ -12,19 +12,19 @@ const client = new discord.Client({
 
 const commandsArray = [
     {
-        name: "help",
+        name: "\nhelp",
         commandLine: "!help [command]",
-        descreption: "Get information about commands that are available or a specific one.\nIf there is no specified command, all available commands will be displayed.",
+        description: "Get information about commands that are available or a specific one. \nIf there is no specified command, all available commands will be displayed.",
     },
     {
         name: "add",
-        commandLine: "!addRole RoleName ColorValue",
-        descreption: "Create a role with the specified name and color and assign it to a user.\nIf the role is already present on the server with another color, you will be given the previous color.",
+        commandLine: "!addRole RoleName ColorValue [@userMention]",
+        description: "Create a role with the specified name and color and assign it to mentioned user. \nIf the role is already present on the server with another color, the mentioned user will be given the previous color. The role name should be without any white space",
     },
     {
         name: "remove",
-        commandLine: "!removeRole RoleName",
-        description: "Remove a role from a user with the specified name.",
+        commandLine: "!removeRole RoleName [@userMention]",
+        description: "Remove a role from the mentioned user.",
     }
 ];
 
@@ -48,7 +48,7 @@ function help(message) {
 
     const formattedCommands = commandsToManage.map(command =>
         `Command: ${command.name} \nUse: ${command.commandLine} \nDescription: ${command.description}`
-    ).join('\n\n');
+    ).join('\n\n\n');
 
     // // Reply with the formatted string
     message.reply(`${formattedCommands}`);
